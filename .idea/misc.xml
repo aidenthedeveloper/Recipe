@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/border_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/button_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/circle.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/circleimage.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/circleimagebackground.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/circles.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/ic_search.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/rectangle.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/drawable/round_button.xml" value="0.2703125" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_comment.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_edit_prof.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_edit_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_email.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_email_login.xml" value="0.2269021739130435" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_followers.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_forget_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_forget_password_message.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_home.xml" value="0.4723294723294723" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_log_out.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_login.xml" value="0.536" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_new_profile.xml" value="0.6" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_notification_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_otp.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_phone_login.xml" value="0.4" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_phone_register.xml" value="0.4" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_post.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_recipe.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_register.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_set_new_password.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_settings.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_user_profile.xml" value="0.24547101449275363" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_verify_otpactivity.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_verify_phone_no.xml" value="0.5502318392581144" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/comment_item.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_post_detail.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_prof.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_profile.xml" value="0.5160771704180064" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_search.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/item_steps.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/notification_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/pic_item.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/post2_item.xml" value="0.25181159420289856" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/post_item.xml" value="0.264" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/post_menu.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/recipe_item.xml" value="0.2" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/steps_item.xml" value="0.23867753623188406" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/layout/user_item.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/menu/bottom_navigation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/menu/post_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Aiden/AndroidStudioProjects/Recipe/app/src/main/res/menu/recipe_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/border_background.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/border_bg_white.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/circular_button.xml" value="0.3828125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/gradient_bg.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/ic_comments.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/ic_list.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/ic_people.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/ic_person.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/recipe_comment.xml" value="0.3828125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/rectangle.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/rectangle_black.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/rectangle_white.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/drawable/tv_border.xml" value="0.3828125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_comment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_edit_prof.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_edit_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_email.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_email_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_followers.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_log_out.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_new_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_otp.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_phone_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_phone_register.xml" value="0.32545931758530183" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_post.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_profile.xml" value="0.28940217391304346" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_recipe.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_report.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_table.xml" value="0.3374094202898551" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_test.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_verify_phone_no.xml" value="0.35280797101449274" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/add_recipe.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/comment_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_notification.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_post_detail.xml" value="0.28940217391304346" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_prof.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/fragment_search.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/ingredients_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/item_steps.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/notification_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/pic_item.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/post2_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/post_item.xml" value="0.5827814569536424" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/recipe_comment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/recipe_item.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/recipe_search.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/steps_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/user_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/menu/bottom_navigation.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/menu/post_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/menu/recipe_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3769230769230769" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

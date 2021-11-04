@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#363434"
+    tools:context=".Fragment.SearchFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bar"
+        android:background="?android:attr/windowBackground">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:id="@+id/toolbar">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/search_bar"
+                android:hint="Search..."
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="10dp" />
+
+        </Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:backgroundTint="#a3a3a3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bar"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginRight="-5dp"
+        android:id="@+id/mid_bar"
+        android:background="@drawable/button_background"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:tint="@color/black"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/search_recipe"
+            android:src="@drawable/ic_note"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="50dp" />
+
+   <!--     <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/search_ingredients"
+            android:src="@drawable/ingredients"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="50dp"
+            app:tint="@color/white" /> -->
+
+        <ImageButton
+            android:tint="@color/white"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/search_user"
+            android:src="@drawable/ic_people"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/mid_bar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_recipe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recycler_view"
+                android:layout_marginTop="-1dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mid_bar"
+        android:layout_marginTop="-1dp" />
+
+         <!--   <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_ingre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mid_bar"
+                android:layout_marginTop="-1dp" /> -->
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
