@@ -87,22 +87,11 @@ public class PostActivity extends AppCompatActivity {
     int ing = 0;
 
 
-    private static final int RC_MAIN = 100;
-    private static final int RC_STEP = 200;
-    private final int PICK_IMAGE_REQUEST = 22;
 
+    private final int PICK_IMAGE_REQUEST = 22;
 
     private VideoView videoView;
     private FloatingActionButton btnAddVid;
-
-    private static final int VIDEO_PICK_GALLERY_CODE = 100;
-    private static final int VIDEO_PICK_CAMERA_CODE = 101;
-    private static final int CAMERA_REQUEST_CODE = 102;
-    int code;
-
-    private String[] cameraPermissions;
-
-    private Uri videoUri;
 
     public int stepPost;
 
@@ -112,15 +101,7 @@ public class PostActivity extends AppCompatActivity {
     ArrayList<Ingredients> ingredientsArrayList = new ArrayList<>();
     ArrayList<Ingredients> ingredientsOnlyList = new ArrayList<>();
     ArrayList<Steps> stepsArrayList = new ArrayList<>();
-   // ArrayList<Uri> stepsImageList = new ArrayList<>();
-   // ArrayList<String> myUrlList = new ArrayList<>();
 
-
-    //private ArrayList<Steps> stepsArrayList;
-    //private RecyclerView recyclerView;
-    // private StepsRecyclerAdapter mAdapter;
-    //private RecyclerView.LayoutManager mLayoutManager;
-    RecyclerView recyclerStep;
 
     private ArrayList<Steps> mStepsArrayList;
     private RecyclerView mRecyclerView;
@@ -148,7 +129,6 @@ public class PostActivity extends AppCompatActivity {
         layoutList = findViewById(R.id.layout_list);
         layoutStepList = findViewById(R.id.step_list);
         dropdownRecipe = findViewById(R.id.spinnerRecipeType);
-        //recyclerStep = findViewById(R.id.recyclerStep);
 
         String[] foodType = new String[]{"Food Type: ", "Vegetables", "Fruits","Grains, Legumes, Nuts & Seeds","Meat & Poultry","Fish and Seafood","Dairy Foods","Eggs"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, foodType);
@@ -156,14 +136,7 @@ public class PostActivity extends AppCompatActivity {
 
         videoView = findViewById(R.id.videoView);
         btnAddVid = findViewById(R.id.addVideo);
-        cameraPermissions = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
-       /* btnAddVid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                videoPickDialog();
-            }
-        }); */
 
         View ingredientView = getLayoutInflater().inflate(R.layout.add_recipe, null, false);
         View stepView = getLayoutInflater().inflate(R.layout.item_steps, null, false);
@@ -173,13 +146,6 @@ public class PostActivity extends AppCompatActivity {
         ImageView ivStepsImage = (ImageView) stepView.findViewById(R.id.ivStepsImage);
         ImageView imageDelete = (ImageView) stepView.findViewById(R.id.ivDelete);
         EditText etStepsPos = (EditText) stepView.findViewById(R.id.etStepsPosition);
-
-        int textViewCount = 10;
-
-
-        //tvStepsPosition = findViewById(R.id.tvStepsPosition);
-        // tvStepsPosition.setText(""+1);
-        //stepPost = Integer.valueOf(tvStepsPosition.getText().toString());
 
         layoutList.addView(ingredientView);
         layoutStepList.addView(stepView);
@@ -245,10 +211,6 @@ public class PostActivity extends AppCompatActivity {
         });
 
 
-        //recyclerStep.setLayoutManager(new LinearLayoutManager(this));
-        //StepsRecyclerAdapter stepsRecyclerAdapter = new StepsRecyclerAdapter(this, stepsArrayList);
-        //recyclerStep.setAdapter(stepsRecyclerAdapter);
-
         btnSteps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -257,29 +219,6 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-
-        //   createExampleList();
-        //  buildRecyclerView();
-        //  setButtons();
-
-
-        // stepsModelArrayList.add("");
-        // ArrayList<Steps> stepsModelArrayList = new ArrayList<>();
-        //       <ExampleItem> exampleList
-        //stepsArrayList = new ArrayList<>();
-
-        // ArrayList<Steps> stepsArrayList = new ArrayList<>();
-
-        // LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-        // recyclerView.setLayoutManager(mLayoutManager);
-
-        // recyclerView.setAdapter(StepsRecyclerAdapter);
-
-
-        //mLayoutManager = new LinearLayoutManager(this);
-        //mAdapter = new StepsRecyclerAdapter(stepsArrayList);
-        //recyclerView.setLayoutManager(mLayoutManager);
-        //recyclerView.setAdapter(mAdapter);
 
 
         storageRef = FirebaseStorage.getInstance().getReference("posts");
@@ -301,8 +240,6 @@ public class PostActivity extends AppCompatActivity {
                 String str_title = title.getText().toString();
                 String str_caption = caption.getText().toString();
 
-
-                //  strUsername = username.getText().toString().trim();
 
 
                 if (TextUtils.isEmpty(str_title)) {
@@ -340,110 +277,8 @@ public class PostActivity extends AppCompatActivity {
                         .start(PostActivity.this);
             }
         });
-
-     /*   btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // stepsArrayList.add(new Steps());
-               // stepsRecyclerAdapter.notifyDataSetChanged();
-
-                int position = Integer.parseInt(etInsert.getText().toString());
-                insertItem(position);
-            }
-        }); */
-
-
-    }
-   /* private void videoPickDialog(){
-        String[] options = {"Camera","Gallery"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick Video From")
-                .setItems(options, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if (i==0) {
-
-                            if (!checkCameraPermisison()) {
-                                requestCameraPermission();
-                            } else {
-                                videoPickCamera();
-                            }
-                        }
-                        else if (i==1){
-                            videoPickGallery();
-                            }
-                        }
-
-                }).show();
-
     }
 
-    private void requestCameraPermission(){
-
-        ActivityCompat.requestPermissions(this,cameraPermissions,CAMERA_REQUEST_CODE);
-    }
-
-    private boolean checkCameraPermisison(){
-        boolean result1 = ContextCompat.checkSelfPermission(this,Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED;
-        boolean result2 = ContextCompat.checkSelfPermission(this,Manifest.permission.WAKE_LOCK) == PackageManager.PERMISSION_GRANTED;
-
-        return result1 && result2;
-    }
-    private void videoPickGallery(){
-
-        Intent intent =  new Intent();
-        intent.setType("video/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select Videos"),VIDEO_PICK_GALLERY_CODE);
-    }
-
-    private void videoPickCamera(){
-
-        Intent intent =  new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
-        startActivityForResult(intent,VIDEO_PICK_CAMERA_CODE);
-    }
-
-    private void setVideotoVideoView(){
-        MediaController mediaController = new MediaController(this);
-        mediaController.setAnchorView(videoView);
-
-        videoView.setMediaController(mediaController);
-        videoView.setVideoURI(videoUri);
-        videoView.requestFocus();
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                videoView.pause();
-            }
-        });
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case CAMERA_REQUEST_CODE:
-                if(grantResults.length > 0){
-                    boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                    if(cameraAccepted && storageAccepted){
-                        videoPickCamera();
-                    }
-                    else {
-                        Toast.makeText(this,"Camera and Storage Permissions Required",Toast.LENGTH_SHORT).show();
-                    }
-                }
-        }
-        super.onRequestPermissionsResult(requestCode,permissions,grantResults);
-    }
-
-
-    @Override
-    public boolean onSupportNavigateUp(){
-        onBackPressed();
-        return super.onSupportNavigateUp();
-    } */
 
 
     private boolean checkValid() {
@@ -609,7 +444,6 @@ public class PostActivity extends AppCompatActivity {
             }
         });
 
-        // tvStepPos.setText(String.valueOf(""+1));
         layoutStepList.addView(stepView);
     }
 
@@ -630,77 +464,11 @@ public class PostActivity extends AppCompatActivity {
     }
 
 
-   /* public void insertItem() {
-        mStepsArrayList.add(new Steps());
-        mAdapter.notifyDataSetChanged();
-
-    }
-
-    public void removeItem(int position) {
-        mStepsArrayList.remove(position);
-        mAdapter.notifyItemRemoved(position);
-        mAdapter.notifyDataSetChanged();
-        mAdapter.notifyItemRangeChanged(position, mStepsArrayList.size());
-
-    }
-
-    private void buildRecyclerView() {
-
-        mRecyclerView = findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new LinearLayoutManager(this);
-        mAdapter = new StepsAdapter(mStepsArrayList);
-
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(mAdapter);
-
-
-    }
-
-    private void createExampleList() {
-        mStepsArrayList = new ArrayList<>();
-        mStepsArrayList.add(new Steps("Add 300ml water into the bowl",""));
-        mStepsArrayList.add(new Steps("Mix it with 30g sugar and stir it.",""));
-       // mStepsArrayList.add(new Steps("Put in 300ml flour and bake it.",""));
-
-    } */
-
     private String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
-
-  /*  private void uploadImageToFirebaseStorage() {
-        if (stepsImageList.size() > 0) {
-            Uri imageUri = stepsImageList.get(0);
-            StorageReference reference3 = storageRef.child(System.currentTimeMillis()
-                    + "." + getFileExtension(imageUri));
-            stepsImageList.remove(0);
-            uploadStepTask = reference3.putFile(imageUri);
-            uploadStepTask.continueWithTask(new Continuation() {
-                @Override
-                public Object then(@NonNull Task task) throws Exception {
-                    if (!task.isSuccessful()) {
-                        throw task.getException();
-                    }
-
-                    return reference3.getDownloadUrl();
-                }
-            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                @Override
-                public void onComplete(@NonNull Task<Uri> task) {
-                    if (task.isSuccessful()) {
-                        Uri downloadStepsUri = task.getResult();
-                        myUrl = downloadStepsUri.toString();
-                        myUrlList.add(myUrl);
-                        uploadImage_10(); //Call when completes
-
-                    }
-                }
-            });
-        }
-    } */
 
     private void uploadImage_10() {
         final ProgressDialog pd = new ProgressDialog(this);
@@ -759,25 +527,13 @@ public class PostActivity extends AppCompatActivity {
                         hashMap.put("type",type);
 
 
-                        //hashMap.put("ingredients", ingredientsOnlyList);
-
-
-
-                        //hashMap2.put("steps", stepsArrayList.getText().toString());
-
-                        //addToList(String map);
-
                         reference.child(postid).setValue(hashMap);
-                        //reference2.child(postid).setValue(hashMap);
                         reference.child(postid).child("Ingredients").setValue(ingredientsArrayList);
                         reference.child(postid).child("PlainIngredients").setValue(ingredientsOnlyList);
                         reference.child(postid).child("Steps").setValue(stepsArrayList);
 
                         hashMap.put("ingredients", Arrays.asList(ingredientLists));
                         hashMap.put("steps", Arrays.asList(stepLists));
-                        //reference2.child(postid).child("Steps").setValue(stepsImageList);
-                        //reference2.child(postid).child("Steps").child("Image").setValue(stepsArrayList);
-                        //reference2.child(postid).child("Steps").setValue(stepsPosList);
 
                         FirebaseFirestore fStore = FirebaseFirestore.getInstance();
 
@@ -835,63 +591,6 @@ public class PostActivity extends AppCompatActivity {
             // finish();
         }
 
-       /* if(requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK && code == RC_STEP) {
 
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            mStepUri = result.getUri();
-
-            ivStepsImage.setImageURI(mStepUri);
-        } else {
-            Toast.makeText(this, "Something gone wrong!", Toast.LENGTH_SHORT).show();
-            // startActivity(new Intent(PostActivity.this, HomeActivity.class));
-            // finish();
-        } */
-
-    /*    if (requestCode == PICK_IMAGE_REQUEST
-                && resultCode == RESULT_OK
-                && data != null
-                && data.getData() != null) {
-
-            // Get the Uri of data
-            filePath = data.getData();
-            try {
-
-                // Setting image on image view using Bitmap
-                Bitmap bitmap = MediaStore
-                        .Images
-                        .Media
-                        .getBitmap(
-                                getContentResolver(),
-                                filePath);
-           //     ivStepsImage.setImageBitmap(bitmap);
-                stepsImageList.add(filePath);
-            } catch (IOException e) {
-                // Log the exception
-                e.printStackTrace();
-
-            }
-        } */
-      /*  if(resultCode == RESULT_OK) {
-            if (requestCode == VIDEO_PICK_GALLERY_CODE) {
-                videoUri = data.getData();
-            } else if (requestCode == VIDEO_PICK_CAMERA_CODE) {
-                videoUri = data.getData();
-            }
-        } */
-
-   /* public synchronized void addToList(String mapKey, Steps myStep) {
-        HashMap<String, ArrayList<Steps>> stepss = new HashMap<String, ArrayList<Steps>>();
-        ArrayList<Steps> stepsListt = stepss.get(mapKey);
-
-        // if list does not exist create it
-        if(stepsListt == null) {
-            stepsListt = new ArrayList<Steps>();
-            stepsListt.add(myStep);
-            stepss.put(mapKey, stepsListt);
-        } else {
-            // add if item is not already in list
-            if(!stepsListt.contains(myStep)) stepsListt.add(myStep);
-        }
-    } */
     }
 }

@@ -62,9 +62,9 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
     }
-    private String getFileExtension(Uri uri){
+   /* private String getFileExtension(Uri uri){
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
-    }
+    } */
 }

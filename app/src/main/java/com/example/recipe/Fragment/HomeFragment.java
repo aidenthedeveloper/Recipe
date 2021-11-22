@@ -234,11 +234,8 @@ public class HomeFragment extends Fragment {
         SharedPreferences prefs = getActivity().getSharedPreferences("PREFS", getActivity().MODE_PRIVATE);
         postid = prefs.getString("postid", "none");
 
-        //loadRecommend();
-        //checkTesting();
         readReco();
         checkFollowing();
-       // checkRecommend();
         readRecipe();
         readType1();
         readType2();
@@ -328,7 +325,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.GONE);
                         recyclerView9.setVisibility(View.GONE);
                         recyclerView10.setVisibility(View.GONE);
-                        //readRecipe();
                         break;
 
                     case 1:
@@ -343,8 +339,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.GONE);
                         recyclerView9.setVisibility(View.GONE);
                         recyclerView10.setVisibility(View.GONE);
-                        //postLists2.clear();
-                        //readType1();
                         break;
 
                     case 2:
@@ -359,8 +353,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.GONE);
                         recyclerView9.setVisibility(View.GONE);
                         recyclerView10.setVisibility(View.GONE);
-                        //postLists2.clear();
-                       // readType2();
                         break;
 
                     case 3:
@@ -375,8 +367,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.GONE);
                         recyclerView9.setVisibility(View.GONE);
                         recyclerView10.setVisibility(View.GONE);
-                        //postLists2.clear();
-                        //readType3();
                         break;
 
                     case 4:
@@ -391,8 +381,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.GONE);
                         recyclerView9.setVisibility(View.GONE);
                         recyclerView10.setVisibility(View.GONE);
-                        //postLists2.clear();
-                       // readType4();
                         break;
 
                     case 5:
@@ -407,8 +395,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.VISIBLE);
                         recyclerView9.setVisibility(View.GONE);
                         recyclerView10.setVisibility(View.GONE);
-                        //postLists2.clear();
-                        //readType5();
                         break;
 
                     case 6:
@@ -423,8 +409,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.GONE);
                         recyclerView9.setVisibility(View.VISIBLE);
                         recyclerView10.setVisibility(View.GONE);
-                        //postLists2.clear();
-                       // readType6();
                         break;
 
                     case 7:
@@ -439,8 +423,6 @@ public class HomeFragment extends Fragment {
                         recyclerView8.setVisibility(View.GONE);
                         recyclerView9.setVisibility(View.GONE);
                         recyclerView10.setVisibility(View.VISIBLE);
-                        //postLists2.clear();
-                       // readType7();
                         break;
 
                 }
@@ -486,28 +468,6 @@ public class HomeFragment extends Fragment {
                 ingredientList.toArray(new String[0]);
                 ingredientLists = ingredientList.toArray(new String[ingredientList.size()]);
 
-             /*   DatabaseReference reference4 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Unrecommend").child(firebaseUser.getUid());
-                reference4.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot2) {
-                        ingredientNoList.clear();
-                        String data2 ="";
-                        for (DataSnapshot snapshot2 : dataSnapshot2.getChildren()) {
-                            Ingredients ingredients = snapshot2.getValue(Ingredients.class);
-                            data2 = ingredients.getIngredients();
-                            ingredientNoList.add(data2);
-                        }
-                        ingredientNoList.trimToSize();
-                        ingredientNoList.toArray(new String[0]);
-                        ingredientNoLists = ingredientNoList.toArray(new String[ingredientNoList.size()]);
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                }); */
 
                 if(ingredientList != null && !ingredientList.isEmpty()) {
                     postRef.whereArrayContainsAny("ingredients", Arrays.asList(ingredientLists))
@@ -527,23 +487,6 @@ public class HomeFragment extends Fragment {
                                     recyclerView3.setVisibility(View.VISIBLE);
                                 }
                             });
-                /*    postRef.whereNotIn("ingredients",Arrays.asList(ingredientNoLists))
-                            .get()
-                            .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                @Override
-                                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                    postLists3.clear();
-                                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                                        Post post = documentSnapshot.toObject(Post.class);
-                                        if (!firebaseUser.getUid().equals(post.getPublisher())) {
-                                            postLists3.add(post);
-                                        }
-                                    }
-                                    postAdapter.notifyDataSetChanged();
-                                    progressBar.setVisibility(View.GONE);
-                                    recyclerView3.setVisibility(View.VISIBLE);
-                                }
-                            }); */
                 }
             }
 
@@ -552,117 +495,13 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
-     /*   DatabaseReference reference3 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts").child(postid).child("PlainIngredients");
-        reference3.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                ingredientList.clear();
-                String data = "";
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    Ingredients ingredients = snapshot.getValue(Ingredients.class);
-                    data = ingredients.getIngredients();
-                    ingredientList.add(data);
-                    //Toast.makeText(getContext(), data, Toast.LENGTH_SHORT).show();
-                }
-                ingredientList.trimToSize();
-                ingredientList.toArray(new String[0]);
-                ingredientLists = ingredientList.toArray(new String[ingredientList.size()]);
-                //Toast.makeText(getContext(), data, Toast.LENGTH_SHORT).show();
-                //String str_test = Arrays.toString(ingredientLists);
-                //Toast.makeText(getContext(),str_test ,Toast.LENGTH_SHORT).show();
-
-                if(ingredientList != null && !ingredientList.isEmpty()) {
-                    postRef.whereArrayContainsAny("ingredients", Arrays.asList(ingredientLists))
-                            .get()
-                            .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                @Override
-                                public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                    postLists3.clear();
-                                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                                        Post post = documentSnapshot.toObject(Post.class);
-                                        if (!firebaseUser.getUid().equals(post.getPublisher())) {
-                                            postLists3.add(post);
-                                        }
-                                    }
-                                    postAdapter.notifyDataSetChanged();
-                                    progressBar.setVisibility(View.GONE);
-                                    recyclerView3.setVisibility(View.VISIBLE);
-                                }
-                            });
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        }); */
-
-       /* postRef.document(postid).document(email).collection("Group").document(groupTitle).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        ArrayList<String> arrayList = (ArrayList<String>) document.get("partecipant");
-                        //Do what you need to do with your ArrayList
-                        for (String s : arrayList) {
-                            Log.d(TAG, s);
-                        }
-                    }
-                }
-            }
-        }); */
-
-
-     /*   postRef
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        ingredientList.clear();
-                        if (task.isSuccessful()) {
-                            String data = "";
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                String ingredients = document.getString("ingredients");
-                                data = ingredients;
-                                ingredientList.add(data);
-                            }
-                            ingredientList.trimToSize();
-                            ingredientList.toArray(new String[0]);
-                            ingredientLists = ingredientList.toArray(new String[ingredientList.size()]);
-
-                            if(ingredientList != null && !ingredientList.isEmpty()) {
-                                postRef.whereArrayContainsAny("ingredients", Arrays.asList(ingredientLists))
-                                        .get()
-                                        .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                                            @Override
-                                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                                postLists3.clear();
-                                                for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                                                    Post post = documentSnapshot.toObject(Post.class);
-                                                    if (!firebaseUser.getUid().equals(post.getPublisher())) {
-                                                        postLists3.add(post);
-                                                    }
-                                                }
-                                                postAdapter.notifyDataSetChanged();
-                                                progressBar.setVisibility(View.GONE);
-                                                recyclerView3.setVisibility(View.VISIBLE);
-                                            }
-                                        });
-                            }
-                        }
-                    }
-                }); */
-
     }
 
-    public void checkTesting() {
+   /* public void checkTesting() {
         readReco();
         String sysid1String = Arrays.toString(ingredientLists);
         Toast.makeText(getContext(), sysid1String, Toast.LENGTH_SHORT).show();
-        postRef.whereArrayContainsAny("ingredients", Arrays.asList(test) /*"sugar" */)
+        postRef.whereArrayContainsAny("ingredients", Arrays.asList(test) "sugar" )
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -787,9 +626,9 @@ public class HomeFragment extends Fragment {
                     Post post = snapshot.getValue(Post.class);
                     for (String ingre : recommendList) {
                         //Toast.makeText(getContext(), ingre, Toast.LENGTH_SHORT).show();
-                     /*   if(ingredients.getIngredients().equals(ingre)){
+                        if(ingredients.getIngredients().equals(ingre)){
                             postLists3.add(post);
-                        } */
+                        }
                         //if(recommendList.contains(ingre))
 
                     }
@@ -804,7 +643,7 @@ public class HomeFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-    }
+    } */
 
     private void checkFollowing() {
         followingList = new ArrayList<>();
@@ -843,10 +682,6 @@ public class HomeFragment extends Fragment {
                         if(post.getPublisher().equals(id)){
                             postLists.add(post);
                         }
-                 /*   for (String id : followingList) {
-                        if (!firebaseUser.getUid().equals(post.getPublisher())) {
-                            postLists.add(post);
-                        } */
                     }
                 }
                 postAdapter.notifyDataSetChanged();

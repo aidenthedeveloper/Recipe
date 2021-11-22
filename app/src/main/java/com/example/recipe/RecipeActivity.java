@@ -33,7 +33,6 @@ import com.example.recipe.Adapter.RecipeAdapter;
 import com.example.recipe.Adapter.RecommendAdapter;
 import com.example.recipe.Adapter.StepAdapter;
 import com.example.recipe.Fragment.HomeFragment;
-import com.example.recipe.Model.CombineData;
 import com.example.recipe.Model.Comment;
 import com.example.recipe.Model.Ingredients;
 import com.example.recipe.Model.Post;
@@ -76,17 +75,9 @@ public class RecipeActivity extends AppCompatActivity {
     private IngredientsAdapter recommendAdapter;
     LayoutInflater inflater;
 
-    Ingredients ingredients;
-    ArrayList<String> ingredientsList = new ArrayList<>();
     ArrayList<String> stepsList = new ArrayList<>();
     ArrayList<Integer> stepsPosList = new ArrayList<>();
 
-    Fragment selectedFragment = null;
-
-    ArrayAdapter <String> ingredientsAdapter;
-    private int countIngredients;
-    //NEW METHOD
-    ListView listView;
 
 
     private RecyclerView recyclerView2,recyclerView3;
@@ -96,7 +87,6 @@ public class RecipeActivity extends AppCompatActivity {
     private List<Ingredients> ingredientsListt;
     private List<Ingredients> recommendList;
     String recoIngList;
-    String tag;
     String[] ingredientLists;
     ArrayList<String> ingredientList = new ArrayList<>();
 
@@ -136,38 +126,6 @@ public class RecipeActivity extends AppCompatActivity {
         Intent intent = getIntent();
         postid = intent.getStringExtra("postid");
 
-       /* Intent intent = getIntent();
-        postid = intent.getStringExtra("postid");
-        String str_title = intent.getStringExtra("title");
-        String str_caption = intent.getStringExtra("caption");
-        String str_steps = intent.getStringExtra("steps");
-        String str_ingredients = intent.getStringExtra("ingredients");
-        String str_username = intent.getStringExtra("username");
-        String str_fullName = intent.getStringExtra("fullName");
-        String str_likes = intent.getStringExtra("likes");
-        String str_comments = intent.getStringExtra("comments");
-
-        image_profile = findViewById(R.id.image_profile);
-        post_image = findViewById(R.id.post_image);
-        like = findViewById(R.id.like);
-        comment = findViewById(R.id.comment);
-        save = findViewById(R.id.save);
-        username = findViewById(R.id.username);
-        likes = findViewById(R.id.likes);
-        caption = findViewById(R.id.caption);
-        comments = findViewById(R.id.comments);
-        more = findViewById(R.id.more);
-        fullName = findViewById(R.id.fullname);
-        title = findViewById(R.id.title);
-
-//        username.setText(str_username);
-        title.setText(str_title);
-        caption.setText(str_caption);
-//        ingredients.setText(str_ingredients);
- //       steps.setText(str_steps);
- //       fullName.setText(str_fullName);
-        likes.setText(str_likes);
-        comments.setText(str_comments); */
 
         SharedPreferences prefs = getSharedPreferences("PREFS", MODE_PRIVATE);
         postid = prefs.getString("postid", "none");
@@ -196,18 +154,6 @@ public class RecipeActivity extends AppCompatActivity {
         recyclerView.setVisibility(View.GONE);
         recyclerView_detailed.setVisibility(View.VISIBLE);
 
-       // listView = findViewById(R.id.listView);
-        //stepsView = findViewById(R.id.stepView);
-
-        //recyclerView_details = findViewById(R.id.recycler_view_details);
-       // recyclerView_details.setHasFixedSize(true);
-      //  LinearLayoutManager mLayoutManager_details = new LinearLayoutManager(this);
-       // recyclerView_details.setLayoutManager(mLayoutManager_details);
-
-        //recipeAdapter2 = new Recipe2Adapter(this, postList);
-        //recyclerView_details.setAdapter(recipeAdapter2);
-
-        //recyclerView_details.setVisibility(View.VISIBLE);
 
         recyclerView2 = findViewById(R.id.recycler_view_steps);
         recyclerView2.setHasFixedSize(true);
@@ -232,7 +178,6 @@ public class RecipeActivity extends AppCompatActivity {
 
         fStore = FirebaseFirestore.getInstance();
 
-        //ingList = new ArrayList<>();
         stepsList = new ArrayList<>();
         stepsPosList = new ArrayList<>();
 
@@ -256,7 +201,6 @@ public class RecipeActivity extends AppCompatActivity {
                 bundle.putStringArray("ingredients", ingredientLists);
                 firebaseAnalytics.logEvent("start_cooking",bundle);
 
-                //loadIngredients();
 
                 HashMap<String, Object> hashMap = new HashMap<>();
                 //hashMap.put("ingredients", Arrays.asList(recoIngList));
@@ -274,52 +218,15 @@ public class RecipeActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
-            /*    DocumentReference documentReference = fStore.collection("recommend").document(firebaseUser.getUid());
-                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-
-                    }
-                }) */
             }
         });
 
-
-        //rvIngredients = findViewById(R.id.recycler_ingredients);
-        //rvIngredients.setHasFixedSize(true);
-       // rvIngredients = findViewById(R.id.recycler_ingredients);
-     //   LinearLayoutManager ingLayoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
-     //   PostAdapter postAdapter = new PostAdapter(buildIngList());
-//        rvIngredients.setAdapter(postAdapter);
-//        rvIngredients.setLayoutManager(ingLayoutManager);
-
-
-     /*   listView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                listView.requestDisallowInterceptTouchEvent(true);
-                int action = event.getActionMasked();
-                switch (action) {
-                    case MotionEvent.ACTION_UP:
-                        listView.requestDisallowInterceptTouchEvent(false);
-                        break;
-                }
-                return false;
-            }
-        }); */
-
-        //buildIngList();
 
         readRecommend();
         readRecipe();
         readIngredientss();
         readStepp();
         readTest();
-       // readSteps();
-       // getImage();
 
     }
 
@@ -349,15 +256,6 @@ public class RecipeActivity extends AppCompatActivity {
 
     }
 
-
-   /* private List<Ingredients> buildIngList() {
-        List<Ingredients> ingredientsList = new ArrayList<>();
-        for (int i=0; i<ingredientsList.size(); i++) {
-            Ingredients ingredients = new Ingredients("Ingredients " + ": "+ ingredientsList, "Amount "+i, "");
-            //ingredientsList.add(new Ingredients("Ingredients " + ": ", "Amount "+, ""));
-        }
-        return ingredientsList;
-    } */
 
     private void readStepp() {
         DatabaseReference reference2 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts").child(postid).child("Steps");
@@ -407,183 +305,7 @@ public class RecipeActivity extends AppCompatActivity {
             }
         });
     }
-  /*  private void readSteps(){
-        DatabaseReference reference2 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Recipe").child(postid).child("Steps");
-        stepsList = new ArrayList<>();
-        stepsPosList = new ArrayList<>();
-        //stepsFullList = new ArrayList<>();
-        //stepsAdapter4 = new ArrayAdapter<CombineData>(this,R.layout.steps_item);
 
-        //stepsAdapter = new ArrayAdapter<String>(this,R.layout.steps_item,R.id.etStepsDetails,stepsList);
-        stepsAdapter2 = new ArrayAdapter<Integer>(this,R.layout.steps_item,R.id.tvStepsPosition,stepsPosList);
-        //stepsAdapter3 = new ArrayAdapter<Steps>(this,R.layout.steps_item,R.id.etStepsDetails,R.id.tvStepsPosition,stepsList);
-
-        stepsView.setAdapter(stepsAdapter);
-        stepsView2.setAdapter(stepsAdapter2);
-
-        DatabaseReference reference3 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Recipe").child(postid);
-        reference3.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                countSteps = (int) snapshot.getChildrenCount();
-
-                ViewGroup.LayoutParams listViewParams = (ViewGroup.LayoutParams)stepsView.getLayoutParams();
-                listViewParams.height = 500 * countSteps;
-                stepsView.requestLayout();
-                //stepsView2.requestLayout();
-            }
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        reference2.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String value = snapshot.getValue(Steps.class).toString();
-                String value2 = snapshot.getValue(Steps.class).toString3();
-                stepsList.add(value);
-                //stepsPosList.add(value2);
-                Collections.sort(stepsPosList);
-                stepsAdapter.notifyDataSetChanged();
-                //stepsAdapter2.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    } */
-  /*  private void readIngredients(){
-        DatabaseReference reference2 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Recipe").child(postid).child("Ingredients");
-        ingredientsList = new ArrayList<>();
-        ingredientsAdapter = new ArrayAdapter<String>(this,R.layout.ingredients_info,R.id.ingredientsInfo,ingredientsList);
-        listView.setAdapter(ingredientsAdapter);
-
-
-        //displayList = new ArrayList<>();
-        //Utility.setListViewHeightBasedOnChildren(listView);
-        DatabaseReference reference3 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Recipe").child(postid);
-        reference3.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                countIngredients = (int) snapshot.getChildrenCount();
-                //Toast.makeText(getApplicationContext(), "Total number of Items are:" + countIngredients , Toast.LENGTH_LONG).show();
-
-                ViewGroup.LayoutParams listViewParams = (ViewGroup.LayoutParams)listView.getLayoutParams();
-                listViewParams.height = 120 * countIngredients;
-                listView.requestLayout();
-            }
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        reference2.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-               // countIngredients = (int) snapshot.getChildrenCount();
-                String value = snapshot.getValue(Ingredients.class).toString();
-                ingredientsList.add(value);
-                ingredientsAdapter.notifyDataSetChanged();
-              //  Toast.makeText(getApplicationContext(), "Total number of Items are:" + countIngredients , Toast.LENGTH_LONG).show();
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        }); */
-     /*           (new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-             //   if(dataSnapshot.exists()) {
-                 //   displayList.clear();
-                    for (DataSnapshot dss : dataSnapshot.getChildren()) {
-                     //   Ingredients ingredients = dss.getValue(Ingredients.class);
-                     //   displayList.add(ingredients);
-                        ingredients = dss.getValue(Ingredients.class);
-                        ingredientsList.add(ingredients.getTotalIng());
-                    }
-                    listView.setAdapter(ingredientsAdapter);
-               //     StringBuilder stringBuilder = new StringBuilder();
-
-              //      for (int i = 0; i < displayList.size(); i++)
-              //      {
-              //          stringBuilder.append(displayList.get(i)+ ",");
-             //       }
-
-            //    }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        }); */
     private void readRecipe(){
         DatabaseReference reference = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts").child(postid);
 

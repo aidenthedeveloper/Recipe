@@ -76,11 +76,6 @@ public class EmailLoginActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        //FirebaseUser firebaseUser;
-
-        //firebaseUser = FirebaseAuth.getInstance(FirebaseApp.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app")).getCurrentUser();
-        //firebaseUser = FirebaseAuth.getInstance(FirebaseApp.getInstance()).getCurrentUser();
-
 
         tv_signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,52 +99,9 @@ public class EmailLoginActivity extends AppCompatActivity {
                 if (!validateEmail() | !validatePassword()) {
                     Toast.makeText(EmailLoginActivity.this, "All Fields Are Required", Toast.LENGTH_SHORT).show();
                     pd.dismiss();
-                } /*else if (emailB == false) {
+                } else {
                     checkEmail();
-                    pd.dismiss();
-                } */else {
-                    checkEmail();
-                    /*if (emailB == true) {
-                        auth.signInWithEmailAndPassword(str_email, str_password)
-                                .addOnCompleteListener(EmailLoginActivity.this, new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if (task.isSuccessful()) {
-                                            DatabaseReference reference = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("Users")
-                                                    .child(auth.getCurrentUser().getUid());
 
-                                            FirebaseUser firebaseUser = FirebaseAuth.getInstance(FirebaseApp.getInstance()).getCurrentUser();
-
-                                            reference.addValueEventListener(new ValueEventListener() {
-                                                @Override
-                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                    pd.dismiss();
-                                                    if (!firebaseUser.isEmailVerified()) {
-                                                        pd.dismiss();
-                                                        Toast.makeText(EmailLoginActivity.this, "Please verify your email before logging in.", Toast.LENGTH_SHORT).show();
-                                                        //Intent intent = new Intent(EmailLoginActivity.this, HomeActivity.class);
-                                                        //startActivity(intent);
-                                                    } else {
-                                                        pd.dismiss();
-                                                        Intent intent = new Intent(EmailLoginActivity.this, HomeActivity.class);
-                                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                        startActivity(intent);
-                                                        finish();
-                                                    }
-                                                }
-
-                                                @Override
-                                                public void onCancelled(@NonNull DatabaseError error) {
-                                                    pd.dismiss();
-                                                }
-                                            });
-                                        } else {
-                                            pd.dismiss();
-                                            Toast.makeText(EmailLoginActivity.this, "Login Failed.", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                } */
                     }
                 }
         });

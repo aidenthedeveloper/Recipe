@@ -21,9 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.recipe.Fragment.PostDetailFragment;
 import com.example.recipe.Fragment.ProfileFragment;
-import com.example.recipe.Model.Comment;
 import com.example.recipe.Model.Notification;
 import com.example.recipe.Model.Post;
 import com.example.recipe.Model.User;

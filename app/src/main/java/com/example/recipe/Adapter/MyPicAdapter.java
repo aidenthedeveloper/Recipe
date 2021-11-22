@@ -11,16 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.recipe.Fragment.PostDetailFragment;
 import com.example.recipe.Model.Post;
 import com.example.recipe.R;
 import com.example.recipe.RecipeActivity;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 

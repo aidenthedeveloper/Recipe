@@ -33,7 +33,6 @@ import com.google.firebase.auth.FirebaseUser;
          setContentView(R.layout.activity_home);
 
          bottomNavigationView = findViewById(R.id.btm_navigation);
-         //FbottomNavigationView.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.transparent));
          bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
 
          fragmentManager = getSupportFragmentManager();
@@ -50,10 +49,6 @@ import com.google.firebase.auth.FirebaseUser;
         } else {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
         }
-
-
-         //SessionManager sessionManager = new SessionManager(this);
-         //HashMap<String,String> usersDetails = sessionManager.getUsersDetailFromSession();
 
 
 

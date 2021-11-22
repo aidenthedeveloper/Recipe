@@ -1,6 +1,5 @@
 package com.example.recipe.Adapter;
 
-import  android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -12,12 +11,10 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -32,22 +29,18 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.recipe.CommentActivity;
 import com.example.recipe.FollowersActivity;
-import com.example.recipe.Fragment.PostDetailFragment;
 import com.example.recipe.Fragment.ProfileFragment;
 import com.example.recipe.HomeActivity;
 import com.example.recipe.Model.Ingredients;
 import com.example.recipe.Model.Post;
 import com.example.recipe.Model.Steps;
 import com.example.recipe.Model.User;
-import com.example.recipe.PostActivity;
 import com.example.recipe.R;
 import com.example.recipe.RecipeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -68,15 +61,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder>{

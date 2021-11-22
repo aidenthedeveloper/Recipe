@@ -55,20 +55,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-             /*   btnSignUpEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-            }
-        });
-
-
-        btnSignUpPhone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, PhoneRegisterActivity.class));
-            }
-        }); */
 
     }
 }

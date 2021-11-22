@@ -112,8 +112,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        //checkUsername();
-
         etDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -203,11 +201,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         pd.dismiss();
                                     } else {
                                         checkEmail();
-                                     /*   if(emailB == true){
-                                                String str_gender = radioButton.getText().toString();
-                                                register(str_username, str_fullname, str_email, str_password, str_gender);
-
-                                        } */
                                     }
 
                                 }
@@ -223,32 +216,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-   /* private void checkUsername() {
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Users");
-        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot ds : snapshot.getChildren()) {
 
-                    users_from_database = (String) ds.child("username").getValue();
-
-                    username_list.add(users_from_database);
-                    StringBuilder stringBuilder = new StringBuilder();
-                    for (String s : username_list) {
-                        stringBuilder.append(s + "\n");
-                    }
-                       Log.d("ZI", stringBuilder.toString());
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("ZI", "Failed");
-            }
-        });
-    } */
 
     private DatePickerDialog.OnDateSetListener datePickListener = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -375,10 +343,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Boolean validatePassword() {
         String val = password.getEditText().getText().toString();
-      /*  String passwordVal2 = "^" +
-                "(?=.*[0-9])" +
-                "(?=.*[A-Z])" +
-                "$"; */
 
         String passwordVal = "^" +
                 //"(?=.*[0-9])" +         //at least 1 digit
@@ -387,7 +351,7 @@ public class RegisterActivity extends AppCompatActivity {
                 "(?=.*[a-zA-Z])" +      //any letter
                 //"(?=.*[@#$%^&+=])" +    //at least 1 special character
                 "(?=\\S+$)" +           //no white spaces
-                ".{4,}" +               //at least 4 characters
+                ".{6,}" +               //at least 6 characters
                 "$";
 
         if (val.isEmpty()) {
@@ -398,10 +362,11 @@ public class RegisterActivity extends AppCompatActivity {
             password.setError("Password is too weak");
             pd.dismiss();
             return false;
-        } /*else if (!val.matches(passwordVal2)) {
-            rPassword.setError("Password need at least 1 numeral digit and 1 upper case letter.");
+        } else if (val.length() < 6) {
+            password.setError("Password is needs to be above 6 characters.");
+            pd.dismiss();
             return false;
-        } */ else {
+        } else {
             password.setError(null);
             password.setErrorEnabled(false);
             return true;
@@ -436,19 +401,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             });
 
-
-                          /*  rootNode = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app");
-                            reference = rootNode.getReference("Users");
-
-
-                            String name = etFName.getEditText().getText().toString();
-                            String username = etUName.getEditText().getText().toString();
-                            String password = etPw.getEditText().getText().toString();
-                            String phoneNo = tvPhone.getText().toString();
-
-                            UserHelperClass helperClass = new UserHelperClass(name,username,phoneNo,password);
-
-                            reference.setValue(helperClass); */
                             DatabaseReference reference2 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Recommend");
                             reference2.child(firebaseUser.getUid()).setValue(ingredientList);
 

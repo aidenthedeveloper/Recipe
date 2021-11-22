@@ -40,7 +40,6 @@ public class NotificationFragment extends Fragment {
     private NotificationAdapter notificationAdapter;
     private List<Notification> notificationList;
     String publisherid;
-    private List<Comment> commentList;
 
 
 
