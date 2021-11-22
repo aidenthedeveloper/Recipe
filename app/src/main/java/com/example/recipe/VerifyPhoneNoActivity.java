@@ -223,14 +223,6 @@ public class VerifyPhoneNoActivity extends AppCompatActivity {
                 });
     }
 
-    private void updateOldUsersData() {
-
-        Intent intent = new Intent(getApplicationContext(),SetNewPasswordActivity.class);
-        intent.putExtra("phoneNo",phoneNo);
-        startActivity(intent);
-        finish();
-    }
-
     public void callNextScreenFromOTP(View view){
         pd = new ProgressDialog(VerifyPhoneNoActivity.this);
         pd.setMessage("Please wait...");

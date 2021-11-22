@@ -9,41 +9,24 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
-import android.net.Network;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import com.example.recipe.Databases.SessionManager;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.hbb20.CountryCodePicker;
-
-import java.net.NetworkInterface;
-import java.util.HashMap;
-import java.util.Queue;
 
 public class PhoneLoginActivity extends AppCompatActivity {
 
@@ -84,13 +67,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
         etPhoneNo = findViewById(R.id.etPhoneLoginET);
        // etPassword = findViewById(R.id.etPasswordET);
 
-       /* SessionManager sessionManager = new SessionManager(PhoneLoginActivity.this,SessionManager.SESSION_REMEMBERME);
-        if(sessionManager.checkRememberMe()){
-            HashMap<String,String> rememberMeDetails = sessionManager.getRememberMeDetailsFromSession();
-            etPhoneNo.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPHONENUMBER));
-            etPassword.setText(rememberMeDetails.get(SessionManager.KEY_SESSIONPASSWORD));
-        } */
-
 
         btnPhoneLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,10 +77,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
     }
 
     public void letTheUserLoggedIn(View view) {
-
-      //  if(!isConnected(this)){
-      //      showCustomDialog();
-      //  }
 
 
         if(!validateFields()){
@@ -222,43 +194,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
         });
     }
 
-    private boolean isConnected(PhoneLoginActivity phoneLoginActivity) {
-
-        ConnectivityManager connectivityManager = (ConnectivityManager) phoneLoginActivity.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        NetworkInfo wifiConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        NetworkInfo mobileConn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-
-        if((wifiConn != null && wifiConn.isConnected()) || (mobileConn != null && mobileConn.isConnected())){
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    }
-
-    private void showCustomDialog() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(PhoneLoginActivity.this);
-        builder.setMessage("Please connect to the internet to proceed further")
-                .setCancelable(false)
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-                    }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        finish();
-                    }
-                });
-    }
-
-
 
     private boolean validateFields(){
 
@@ -287,10 +222,6 @@ public class PhoneLoginActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),PhoneRegisterActivity.class));
     }
 
-
-    public void callForgetPassword(View view) {
-        startActivity(new Intent(getApplicationContext(),ForgetPasswordActivity.class));
-    }
 
     public void callVerifyOTPScreen() {
 

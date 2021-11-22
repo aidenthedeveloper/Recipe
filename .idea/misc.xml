@@ -76,6 +76,8 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_email.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_email_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_followers.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_forget_password.xml" value="0.31521739130434784" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_forget_password_message.xml" value="0.31521739130434784" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_log_out.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_main.xml" value="0.33" />
@@ -88,6 +90,7 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_recipe.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_report.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_set_new_password.xml" value="0.31521739130434784" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_table.xml" value="0.3374094202898551" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Recipe/app/src/main/res/layout/activity_test.xml" value="0.36666666666666664" />

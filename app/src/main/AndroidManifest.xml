@@ -23,9 +23,6 @@
             android:exported="true"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".TestActivity"
-            android:exported="true" />
-        <activity
             android:name=".RecipeActivity"
             android:exported="true"
             android:theme="@style/AppTheme" />
@@ -51,19 +48,6 @@
             android:exported="true"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".EditProfileActivity"
-            android:exported="true"
-            android:parentActivityName=".HomeActivity" />
-        <activity
-            android:name=".ForgetPasswordMessageActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SetNewPasswordActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ForgetPasswordActivity"
-            android:exported="true" />
-        <activity
             android:name=".PhoneLoginActivity"
             android:exported="true"
             android:theme="@style/AppTheme2"/>
@@ -84,20 +68,11 @@
             android:exported="true"
             android:theme="@style/AppTheme2" />
         <activity
-            android:name=".EmailActivity"
-            android:exported="true"
-            android:parentActivityName=".EmailLoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="true"
             android:theme="@style/AppTheme2" />
         <activity
             android:name=".UserProfileActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".OtpActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
