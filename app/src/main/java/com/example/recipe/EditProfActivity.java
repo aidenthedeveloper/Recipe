@@ -328,7 +328,7 @@ public class EditProfActivity extends AppCompatActivity {
             uploadImage();
 
         } else {
-            Toast.makeText(this, "Something gone wrong!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Something gone wrong!", Toast.LENGTH_SHORT).show();
         }
     }
 }

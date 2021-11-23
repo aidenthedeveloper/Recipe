@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.recipe.Adapter.CommentAdapter;
 import com.example.recipe.Model.Comment;
 import com.example.recipe.Model.User;
@@ -136,7 +137,9 @@ public class CommentActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
 
-               Glide.with(getApplicationContext()).load(user.getImageurl()).into(image_profile);
+                Glide.with(getApplicationContext()).load(user.getImageurl())
+                        .apply(new RequestOptions().placeholder(R.drawable.ic_person))
+                        .into(image_profile);
             }
 
             @Override

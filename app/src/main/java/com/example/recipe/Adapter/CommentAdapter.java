@@ -154,7 +154,7 @@ public class ViewHolder extends RecyclerView.ViewHolder{
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                Glide.with(mContext).load(user.getImageurl())
+                Glide.with(mContext.getApplicationContext()).load(user.getImageurl())
                         .apply(new RequestOptions().placeholder(R.drawable.ic_person_white))
                         .into(image_profile);
                 username.setText(user.getUsername());
