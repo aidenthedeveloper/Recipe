@@ -586,7 +586,7 @@ public class PostActivity extends AppCompatActivity {
 
             image_added.setImageURI(mImageUri);
         } else {
-            Toast.makeText(this, "Something gone wrong!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Something gone wrong!", Toast.LENGTH_SHORT).show();
             // startActivity(new Intent(PostActivity.this, HomeActivity.class));
             // finish();
         }

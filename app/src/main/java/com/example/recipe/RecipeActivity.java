@@ -209,7 +209,7 @@ public class RecipeActivity extends AppCompatActivity {
                 fStore.collection("recommend").document(firebaseUser.getUid()).set(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        Toast.makeText(RecipeActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(RecipeActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
