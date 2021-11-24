@@ -224,7 +224,7 @@ public class TableActivity extends AppCompatActivity {
                     //post2.setIngredients(totalSteps.substring(4));
                     postsList.add(post2);
 
-
+                    totalIng = "";
                 }
                 //create a pdf file and catch exception beacause file may not be created
                 try {
@@ -476,7 +476,7 @@ public class TableActivity extends AppCompatActivity {
             String serving = post2.getServing();
             String cookTime = post2.getCookTime();
             String foodType = post2.getType();
-            String ingredients = post2.getIngredients().replaceAll("ingredients", "").replaceAll("\\{|\\}|=|\\[|\\]", " ");
+            String ingredients = post2.getIngredients().replaceAll("ingredients", "").replaceAll("\\{|\\}|=|\\[|\\]", " ").replaceAll("gredients", "");
 
 
 
