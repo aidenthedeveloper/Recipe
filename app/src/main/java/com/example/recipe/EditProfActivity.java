@@ -61,7 +61,7 @@ public class EditProfActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
 
-    FirebaseAuth auth;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     private Uri mImageUri;
@@ -186,18 +186,17 @@ public class EditProfActivity extends AppCompatActivity {
                 passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //extract the email and send reset link
 
                         String mail = resetMail.getText().toString();
                         auth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Toast.makeText(EditProfActivity.this, "Reset Link Sent To You Email.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EditProfActivity.this,"Reset Link Sent To You Email.", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(EditProfActivity.this, "Error! Reset Link Is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EditProfActivity.this,"Error! Reset Link Is Not Sent" + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -212,8 +211,8 @@ public class EditProfActivity extends AppCompatActivity {
                 });
 
                 passwordResetDialog.create().show();
-            }
-        });
+                    }
+                });
     }
 
     private void updateProfile(String fullName, String username, String bio) {
