@@ -428,14 +428,14 @@ public class PostActivity extends AppCompatActivity {
         EditText etStepsPos = (EditText) stepView.findViewById(R.id.etStepsPosition);
 
 
-        ivStepsImage.setOnClickListener(new View.OnClickListener() {
+        /*ivStepsImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SelectImage();
                 ArrayList<Integer> images = new ArrayList<Integer>();
 
             }
-        });
+        }); */
 
         imageDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -447,7 +447,7 @@ public class PostActivity extends AppCompatActivity {
         layoutStepList.addView(stepView);
     }
 
-    private void SelectImage() {
+    /* private void SelectImage() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -456,7 +456,7 @@ public class PostActivity extends AppCompatActivity {
                         intent,
                         "Select Image from here..."),
                 PICK_IMAGE_REQUEST);
-    }
+    } */
 
     private void removeStepsView(View view) {
 
