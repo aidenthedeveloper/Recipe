@@ -248,11 +248,11 @@ public class PostActivity extends AppCompatActivity {
                     //pd.dismiss();
                 } else if (TextUtils.isEmpty(str_serving)) {
                     Toast.makeText(PostActivity.this, "Serving portion is required.", Toast.LENGTH_SHORT).show();
-                    serving.setError("Title cannot be empty.");
+                    serving.setError("Serving cannot be empty.");
                     //pd.dismiss();
                 } else if (TextUtils.isEmpty(str_cooktime)) {
                     Toast.makeText(PostActivity.this, "Cooktime is required.", Toast.LENGTH_SHORT).show();
-                    cooktime.setError("Title cannot be empty.");
+                    cooktime.setError("Cooktime cannot be empty.");
                     //pd.dismiss();
                 } else if (foodNo == 0) {
                     Toast.makeText(PostActivity.this, "Food Type is required.", Toast.LENGTH_SHORT).show();
