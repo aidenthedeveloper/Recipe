@@ -153,7 +153,7 @@ public class TableActivity extends AppCompatActivity {
         fetchPosts();
     }
 
-    //function to fetch payment data from the database
+    //function to fetch data from the database
     private void fetchUsers() {
 
         userRef.addValueEventListener(new ValueEventListener() {
@@ -176,7 +176,7 @@ public class TableActivity extends AppCompatActivity {
 
 
                 }
-                //create a pdf file and catch exception beacause file may not be created
+                //create a pdf file and catch exception because file may not be created
                 try {
                     createUserReport(usersList);
                 } catch (DocumentException | FileNotFoundException e) {

@@ -230,6 +230,32 @@ public class RecipeActivity extends AppCompatActivity {
 
     }
 
+    private void loadIngredients() {
+        ingreRef.get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        String data = "";
+
+                        for(QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots){
+                            Post post = documentSnapshot.toObject(Post.class);
+                            post.setPostid(documentSnapshot.getId());
+
+                            String postid = post.getPostid();
+
+                            for (String ingredients : post.getIngredients()){
+                                data += ingredients;
+                                ingredientList.add(ingredients);
+                            }
+                            ingredientList.trimToSize();
+                            ingredientList.toArray(new String[0]);
+                            ingredientLists = ingredientList.toArray(new String[ingredientList.size()]);
+                        }
+                    }
+                });
+
+    }
+
 
     private void readStepp() {
         DatabaseReference reference2 = FirebaseDatabase.getInstance("https://recipe-20a97-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("Posts").child(postid).child("Steps");
