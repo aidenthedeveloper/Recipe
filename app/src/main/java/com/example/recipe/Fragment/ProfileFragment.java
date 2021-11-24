@@ -170,6 +170,9 @@ public class ProfileFragment extends Fragment {
 
                         HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new NotificationFragment(), null)
                                 .addToBackStack(null).commit();
+                    }else if(finalValue == 5) {
+                        HomeActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new HomeFragment(), null)
+                                .addToBackStack(null).commit();
                     }
                 }
                     // Intent intent = new Intent(getActivity(), HomeActivity.class);

@@ -85,8 +85,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         viewHolder.post_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!notification.getPublisher().equals(firebaseUser.getUid())){
-
+                if(!firebaseUser.getUid().equals(notification.getPublisher())){
+                    //if(!notification.getPublisher().equals(firebaseUser.getUid())){
                     SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS",Context.MODE_PRIVATE).edit();
                 editor.putString("postid",notification.getPostid());
                 editor.apply();
@@ -98,8 +98,8 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         viewHolder.image_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!notification.getPublisher().equals(firebaseUser.getUid())){
-
+                if(!firebaseUser.getUid().equals(notification.getPublisher())){
+                //if(!notification.getPublisher().equals(firebaseUser.getUid())){
                     SharedPreferences.Editor editor = mContext.getSharedPreferences("PREFS", Context.MODE_PRIVATE).edit();
                 editor.putString("profileid",notification.getUserid());
                 editor.apply();

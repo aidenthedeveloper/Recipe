@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.recipe.Fragment.ProfileFragment;
 import com.example.recipe.HomeActivity;
 import com.example.recipe.Model.Comment;
 import com.example.recipe.Model.User;
@@ -67,21 +71,25 @@ public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.username.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            if(!comment.getPublisher().equals(firebaseUser.getUid())){
-        Intent intent = new Intent(mContext, HomeActivity.class);
-        intent.putExtra("publisherid", comment.getPublisher());
-        mContext.startActivity(intent);
-        }}
+     //       if(!comment.getPublisher().equals(firebaseUser.getUid())){
+     //   Intent intent = new Intent(mContext, HomeActivity.class);
+    //    intent.putExtra("publisherid", comment.getPublisher());
+    //    mContext.startActivity(intent);
+     //   }
+        }
         });
 
         viewHolder.image_profile.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            if(!comment.getPublisher().equals(firebaseUser.getUid())){
-        Intent intent = new Intent(mContext, HomeActivity.class);
-        intent.putExtra("publisherid", comment.getPublisher());
-        mContext.startActivity(intent);
-        }}
+       //     if(!comment.getPublisher().equals(firebaseUser.getUid())){
+
+      //  Intent intent2 = new Intent(mContext, HomeActivity.class);
+      //  intent2.putExtra("publisherid", comment.getPublisher());
+      //  intent2.putExtra("VALUE1",5);
+      //  mContext.startActivity(intent2);
+       // }
+        }
         });
 
         viewHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
